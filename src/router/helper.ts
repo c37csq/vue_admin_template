@@ -10,7 +10,7 @@ let modules: Record<string, () => Promise<Recordable>>;
 
 const tabStore = useAppTabWithOutStore();
 
-let tabList = tabStore.getTabList;
+const tabList = tabStore.getTabList;
 
 function dynamicImport(modules, name: string) {
   const keys = Object.keys(modules);
@@ -31,16 +31,15 @@ function dynamicImport(modules, name: string) {
   } else {
     console.warn('在src/views/下找不到`' + name + '.vue` 或 `' + name + '.tsx`, 请自行创建!');
   }
-};
+}
 
-function translateTab(list: MenuItem[]) {
+export function translateTab(list: MenuItem[]) {
   const { t } = useI18n();
   // set tab translate
   const map = list.map((item) => ({
     title: t(`routes.${TabListEnum[item.parentId]}.${item.menuName}`),
     url: item.gourl,
   }));
-
   tabList.forEach((item) => {
     if (item.url === PageEnum.BASE_REDIRECT_HOME) {
       item.title = t('common.home');

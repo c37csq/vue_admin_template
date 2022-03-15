@@ -41,6 +41,7 @@
             <el-dropdown-item
               :class="getLocale === item.key ? 'lan_active' : ''"
               v-for="item in localeList"
+              :key="item.key"
               :command="item"
               >{{ item.text }}</el-dropdown-item
             >

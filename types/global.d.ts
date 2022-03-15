@@ -1,8 +1,4 @@
-import type {
-  ComponentPublicInstance,
-  FunctionalComponent,
-  PropType as VuePropType,
-} from 'vue';
+import type { ComponentPublicInstance, FunctionalComponent, PropType as VuePropType } from 'vue';
 
 declare global {
   // vue
@@ -15,15 +11,8 @@ declare global {
     [P in keyof T]?: DeepPartial<T[P]>;
   };
 
-  interface ImportMetaEnv extends Readonly<Record<string, string>> {
-    VITE_APP_TITLE: string;
-    VITE_PORT: number;
-    VITE_BASE_URL: string;
-    VITE_ENV: string;
-  }
-
-  interface ImportMeta {
-    readonly env: ImportMetaEnv;
+  interface ImportMetaEnv extends ViteEnv {
+    __: unknown;
   }
 
   declare interface ViteEnv {
@@ -40,14 +29,10 @@ declare global {
     VITE_USE_IMAGEMIN: boolean;
     VITE_GENERATE_UI: string;
   }
-
 }
 
 declare module 'vue' {
   export type JSXComponent<Props = any> =
-    | { new(): ComponentPublicInstance<Props> }
+    | { new (): ComponentPublicInstance<Props> }
     | FunctionalComponent<Props>;
 }
-
-
-

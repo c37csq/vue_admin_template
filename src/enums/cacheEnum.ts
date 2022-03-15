@@ -22,9 +22,9 @@ export const APP_SESSION_CACHE_KEY = 'COMMON__SESSION__KEY__';
 
 export const LOCALE_KEY = 'LOCALE_KEY__';
 
-export const CacheTypeEnum = {
-  SESSION: 0,
-  LOCAL: 1,
-};
+export enum CacheTypeEnum {
+  SESSION,
+  LOCAL,
+}
 
 export const DEFAULT_COMPANY_CODE = 'NBFX';

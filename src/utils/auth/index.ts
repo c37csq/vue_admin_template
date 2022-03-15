@@ -3,7 +3,9 @@ import { BasicKeys, Persistent } from '@/utils/cache/persistent';
 import projectSetting from '@/settings/projectSetting';
 import { UserInfo } from '#/store';
 
-const isLocal = projectSetting.cacheType === CacheTypeEnum.LOCAL;
+const { cacheType } = projectSetting;
+
+const isLocal = cacheType === CacheTypeEnum.LOCAL;
 
 export function getToken() {
   return getAuthCache(TOKEN_KEY);

@@ -1,12 +1,19 @@
 import { PageEnum } from '@/enums/pageEnum';
-import { useI18n } from '@/hooks/web/useI18n';
 import { TabItem } from '@/store/modules/tabs';
+import { useLocale } from '@/locales/useLocale';
+import { LOCALE } from '@/settings/localeSetting';
 
 export function createDefaultCurrentTab(): TabItem {
-  const { t } = useI18n();
-
+  const { getLocale } = useLocale();
+  if (getLocale.value === LOCALE.EN_US) {
+    return {
+      title: 'Home',
+      url: PageEnum.BASE_REDIRECT_HOME,
+      closable: false,
+    };
+  }
   return {
-    title: t('common.home'),
+    title: '首页',
     url: PageEnum.BASE_REDIRECT_HOME,
     closable: false,
   };

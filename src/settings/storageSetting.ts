@@ -11,8 +11,3 @@ export const cacheCipher = {
   key: '_11111000001111@',
   iv: '@11111000001111_',
 };
-
-export enum CacheTypeEnum {
-  SESSION,
-  LOCAL,
-}

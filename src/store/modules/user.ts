@@ -122,7 +122,6 @@ export const useAppUserStore = defineStore({
       if (!this.getToken) return null;
       this.setCompanyCode(companyCode);
       const powerInfo = await this.getPowerInfoAction();
-
       const sessionTimeout = this.sessionTimeout;
 
       if (sessionTimeout) {
