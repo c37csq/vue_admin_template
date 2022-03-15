@@ -1,0 +1,23 @@
+// 菜单相关样式
+$menu-bg-color: rgb(11, 25, 40); // 菜单背景颜色
+$menu-active-color: #0960bd; // 选中颜色
+$menu-expand-width: 210px; // 菜单展开宽度
+$menu-collapse-width: 64px; // 折叠宽度
+
+// 头部样式
+$header-height: 78px;
+$header-bg-color: #04090f;
+
+// logo 样式
+$logo-bg-color: $menu-bg-color;
+$logo-height: 78px;
+$logo-expand-width: 168px;
+$logo-expand-height: 50px;
+$logo-collapse-width: $menu-collapse-width;
+$logo-collapse-height: 50px;
+
+// tabs样式
+$tabs-bg-height: 46px;
+
+// 内容部分相关样式
+$content-bg-color: rgb(245, 245, 245);

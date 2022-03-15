@@ -1,0 +1,17 @@
+export default {
+  roleCode: 'Role Code',
+  roleName: 'Role Name',
+  remark: 'Remark',
+  useStatus: 'Use Status',
+  updateTime: 'Update Time',
+  createTime: 'Create Time',
+  operate: 'Operate',
+  account: 'Account',
+  userName: 'User Name',
+  telephone: 'Telephone',
+  companyCode: 'Company Code',
+  mailbox: 'Mailbox',
+  departName: 'Depart Name',
+  available: 'Available',
+  deactivate: 'Deactivate',
+};

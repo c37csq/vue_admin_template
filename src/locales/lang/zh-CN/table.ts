@@ -1,0 +1,17 @@
+export default {
+  roleCode: '角色编号',
+  roleName: '角色名称',
+  remark: '备注',
+  useStatus: '使用状态',
+  updateTime: '修改时间',
+  createTime: '创建时间',
+  operate: '操作',
+  account: '账号名',
+  userName: '用户姓名',
+  telephone: '手机号',
+  companyCode: '公司编号',
+  mailbox: '邮箱',
+  departName: '部门名称',
+  available: '可用',
+  deactivate: '停用',
+};

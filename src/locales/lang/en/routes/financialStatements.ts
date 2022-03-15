@@ -1,0 +1,16 @@
+export default {
+  financialStatements: 'Financial Statement',
+  accountReceivable: 'Receivable Statement',
+  accountPayable: 'Payable Statement',
+  profitStatistics: 'Profit Statement',
+  problemStatistics: 'Cost Delay Statistics',
+  paymentExport: 'Payment Statement',
+  templateList: 'Template List',
+  customsDeclaration: 'Custom Declaration Statistics',
+  sysInvoiceInfo: 'Invoice Push',
+  orderCloseAccounts: 'Order Close',
+  verificationRecords: 'Collection Query',
+  orderLockAccounts: 'Lock List',
+  cooperationUnitAdd: 'Add Unit',
+  cooperationUnitDetail: 'Unit Detail',
+};

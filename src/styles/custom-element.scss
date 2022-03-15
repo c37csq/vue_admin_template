@@ -1,0 +1,26 @@
+// 菜单样式
+.el-menu--vertical {
+  .el-menu-item.is-active {
+    background: #0960bd !important;
+  }
+  .el-menu-item:hover {
+    background: rgb(11, 25, 40);
+    color: #ffffff;
+  }
+}
+
+// header
+.el-header {
+  padding: 0 !important;
+  height: 124px !important;
+  box-sizing: border-box;
+}
+
+// dialog
+.el-overlay-dialog {
+  overflow: hidden !important;
+}
+
+.pageContent .el-form-item {
+  margin-right: 0 !important;
+}
