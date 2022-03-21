@@ -50,3 +50,18 @@ export function dateFormat(val: string | undefined, symbol = '/'): string | unde
     );
   }
 }
+
+export function swapArray(arr, curIndex: number, targetIndex: number, flag: boolean) {
+  const list = [];
+  if (flag) {
+    const leftList = arr.filter((_, index) => index < curIndex);
+    const middleList = arr.filter((_, index) => index > curIndex && index <= targetIndex);
+    const rightList = arr.filter((_, index) => index > targetIndex);
+    return list.concat(leftList, middleList, arr[curIndex], rightList);
+  } else {
+    const leftList = arr.filter((_, index) => index < targetIndex);
+    const middleList = arr.filter((_, index) => index >= targetIndex && index < curIndex);
+    const rightList = arr.filter((_, index) => index > curIndex);
+    return list.concat(leftList, arr[curIndex], middleList, rightList);
+  }
+}

@@ -43,14 +43,11 @@ declare module 'vue' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
     ElTable: typeof import('element-plus/es')['ElTable'];
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
-    ElTabPane: typeof import('element-plus/es')['ElTabPane'];
-    ElTabs: typeof import('element-plus/es')['ElTabs'];
     Layout: typeof import('./src/layout/index.vue')['default'];
     LayoutComponentsAppLogo: typeof import('./src/layout/components/AppLogo.vue')['default'];
     LayoutComponentsHeader: typeof import('./src/layout/components/Header.vue')['default'];
     LayoutComponentsSlideLeft: typeof import('./src/layout/components/SlideLeft.vue')['default'];
     LayoutComponentsTabList: typeof import('./src/layout/components/TabList.vue')['default'];
-    LayoutComponentsTabs: typeof import('./src/layout/components/Tabs.vue')['default'];
     Loading: typeof import('element-plus/es')['ElLoadingDirective'];
     ViewsBaseTypeSettingCabinetNo: typeof import('./src/views/baseTypeSetting/cabinetNo.vue')['default'];
     ViewsBaseTypeSettingCabinetType: typeof import('./src/views/baseTypeSetting/cabinetType.vue')['default'];

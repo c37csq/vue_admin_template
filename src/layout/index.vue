@@ -9,7 +9,7 @@
       <el-container class="max-h-screen">
         <el-header>
           <Header />
-          <Tabs @close="closeMenu" />
+          <TabList />
         </el-header>
         <el-main
           v-loading="getOpenPageLoading && getPageLoading"
@@ -35,7 +35,7 @@
   import SlideLeft from './components/SlideLeft.vue';
   import AppLogo from './components/AppLogo.vue';
   import Header from './components/Header.vue';
-  import Tabs from './components/Tabs.vue';
+  import TabList from './components/TabList.vue';
   import { defineComponent, ref } from 'vue';
   import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
   import { useTransitionSetting } from '@/hooks/setting/useTransitionSetting';
@@ -46,7 +46,7 @@
       SlideLeft,
       AppLogo,
       Header,
-      Tabs,
+      TabList,
     },
     setup() {
       const { getCollapsed } = useMenuSetting();

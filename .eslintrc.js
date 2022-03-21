@@ -8,21 +8,21 @@ module.exports = defineConfig({
     es6: true,
   },
   parser: 'vue-eslint-parser',
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'plugin:prettier/recommended', // 添加 prettier 插件
-  ],
   parserOptions: {
-    ecmaVersion: 13,
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
     sourceType: 'module',
     jsxPragma: 'React',
     ecmaFeatures: {
       jsx: true,
     },
   },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:prettier/recommended', // 添加 prettier 插件
+  ],
   rules: {
     'vue/script-setup-uses-vars': 'error',
     '@typescript-eslint/ban-ts-ignore': 'off',
@@ -61,9 +61,7 @@ module.exports = defineConfig({
     'vue/singleline-html-element-content-newline': 'off',
     'vue/attribute-hyphenation': 'off',
     'vue/require-default-prop': 'off',
-    'vue/require-valid-default-prop': 'off',
-    'vue/no-deprecated-router-link-tag-prop': 'off',
-    'vue/no-deprecated-slot-attribute': 'off',
+    'vue/require-explicit-emits': 'off',
     'vue/html-self-closing': [
       'error',
       {
