@@ -54,6 +54,10 @@ export function isEmpty<T = unknown>(val: T): val is T {
   return false;
 }
 
+export const isServer = typeof window === 'undefined';
+
+export const isClient = !isServer;
+
 // check number more than zero
 export function checkNumber(val: string) {
   const reg = /(^[1-9]\d*$)/;

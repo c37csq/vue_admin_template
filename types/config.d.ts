@@ -21,6 +21,8 @@ export interface MenuSetting {
 
 export interface MultiTabsSetting {
   cache: boolean;
+  show: boolean;
+  canDrag: boolean;
 }
 
 export interface TransitionSetting {
@@ -49,6 +51,7 @@ export interface ProjectConfig {
   // tabs setting
   multiTabsSetting: MultiTabsSetting;
   transitionSetting: TransitionSetting;
+  openKeepAlive: boolean;
 }
 
 export interface GlobConfig {

@@ -9,7 +9,7 @@ export enum MenuEnum {
   '财务结算收款' = 'financialSettlementCollection',
   '财务结算付款' = 'financialSettlementPayment',
   '财务报表' = 'financialReport',
-  '订单报表' = 'orderReport',
+  '订单报表' = 'orderStatements',
 }
 
 export const MenuListEnum = {

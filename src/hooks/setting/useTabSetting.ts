@@ -1,15 +1,22 @@
 import { computed } from 'vue';
-import { useAppTabWithOutStore } from '@/store/modules/tabs';
+import { useAppStore } from '@/store/modules/app';
+import { MultiTabsSetting } from '#/config';
 
 export function useTabSetting() {
-  const tabStore = useAppTabWithOutStore();
+  const appStore = useAppStore();
 
-  const getCurrentTab = computed(() => tabStore.getCurrentTab);
+  const getShowMultipleTab = computed(() => appStore.getMultiTabsSetting.show);
 
-  const getTabList = computed(() => tabStore.getTabList);
+  const getCanDrag = computed(() => appStore.getMultiTabsSetting.canDrag);
+
+  function setMultipleTabSetting(multiTabsSetting: Partial<MultiTabsSetting>) {
+    appStore.setProjectConfig({ multiTabsSetting });
+  }
 
   return {
-    getTabList,
-    getCurrentTab,
+    getShowMultipleTab,
+    getCanDrag,
+
+    setMultipleTabSetting,
   };
 }

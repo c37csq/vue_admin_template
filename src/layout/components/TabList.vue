@@ -7,9 +7,10 @@
         v-for="item in getTabList"
         :key="item.url"
         @click="handleTabClick(item)"
-        @dragstart="onDragStart(item)"
+        @dragstart="(e) => onDragStart(e, item)"
         @dragend="onDragEnd"
         @dragenter="onDragEnter(item)"
+        @contextmenu.prevent="(e: MouseEvent) => contextMenuClick(e, item)"
         draggable="true"
       >
         <div class="tab_content">
@@ -34,22 +35,26 @@
 <script lang="ts">
   import { defineComponent, Ref, ref, unref } from 'vue';
   import { TabItem, useAppTabStore } from '@/store/modules/tabs';
-  import { useTabSetting } from '@/hooks/setting/useTabSetting';
   import { useGo } from '@/hooks/web/usePage';
   import { swapArray } from '@/utils/tool';
   import { TransitionEnum } from '@/enums/transitionEnum';
+  import { useTabs } from '@/hooks/web/useTab';
+  import { useRouter } from 'vue-router';
+  import { useTabSetting } from '@/hooks/setting/useTabSetting';
 
   export default defineComponent({
     name: 'TabList',
     setup() {
       const tabStore = useAppTabStore();
       const go = useGo();
-      const { getCurrentTab, getTabList } = useTabSetting();
+      const { getCanDrag } = useTabSetting();
+      const { getCurrentTab, getTabList, contextMenuClick } = useTabs();
       const curDragInfo = ref(null) as Ref<Nullable<TabItem>>;
       const curDragDom = ref(null) as Ref<Nullable<HTMLElement>>;
       const curIndex = ref(-1);
       const targetDragIndex = ref(-1);
       const tabListRef = ref(null);
+      const router = useRouter();
       let timeoutId = ref() as Ref<TimeoutHandle>;
       const lock = ref(false);
 
@@ -62,19 +67,14 @@
       // del tab
       const handleRemoveTab = async (e: Event, val: TabItem) => {
         e?.stopPropagation();
-        const { tabList, currentTab } = tabStore;
-        const { url } = val;
-        const index = tabList.findIndex((item) => item.url === url);
-
-        if (currentTab.url === url) {
-          const tab = tabList[index - 1];
-          go(tab.url);
-        }
-        tabList.splice(index, 1);
-        tabStore.setTabList(tabList);
+        await tabStore.closeTab(val, router);
       };
 
-      function onDragStart(item: TabItem) {
+      function onDragStart(e: MouseEvent, item: TabItem) {
+        if (!unref(getCanDrag)) {
+          e.preventDefault();
+          return;
+        }
         const dragIndex = unref(getTabList).findIndex((val) => val.url === item.url);
         const dragDom = document.querySelectorAll('.tabList .tab_item')[dragIndex] as HTMLElement;
         curDragDom.value = dragDom;
@@ -181,6 +181,7 @@
         onDragEnd,
         handleRemoveTab,
         onDragEnter,
+        contextMenuClick,
       };
     },
   });

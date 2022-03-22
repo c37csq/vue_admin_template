@@ -13,6 +13,8 @@ const setting: ProjectConfig = {
   // Multi-label
   multiTabsSetting: {
     cache: true,
+    show: true,
+    canDrag: true,
   },
   // Transition Setting
   transitionSetting: {
@@ -23,6 +25,7 @@ const setting: ProjectConfig = {
     // Whether to open the top progress bar
     openNProgress: true,
   },
+  openKeepAlive: true,
   removeAllHttpPending: true,
   closeMessageOnSwitch: true,
 };

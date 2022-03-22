@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     App: typeof import('./src/App.vue')['default'];
     ComponentsButtonSrcBasicButton: typeof import('./src/components/Button/src/BasicButton.vue')['default'];
+    ComponentsContextMenuSrcContextMenu: typeof import('./src/components/ContextMenu/src/ContextMenu.vue')['default'];
     ComponentsDialogSrcDialog: typeof import('./src/components/Dialog/src/Dialog.vue')['default'];
     ComponentsIconSrcSvgIcon: typeof import('./src/components/Icon/src/SvgIcon.vue')['default'];
     ComponentsPageSrcPageWrapper: typeof import('./src/components/Page/src/PageWrapper.vue')['default'];
@@ -108,6 +109,7 @@ declare module 'vue' {
     ViewsSys404: typeof import('./src/views/sys/404.vue')['default'];
     ViewsSysHome: typeof import('./src/views/sys/Home.vue')['default'];
     ViewsSysLogin: typeof import('./src/views/sys/Login.vue')['default'];
+    ViewsSysRedirect: typeof import('./src/views/sys/redirect.vue')['default'];
     ViewsSystemSettingCompany: typeof import('./src/views/systemSetting/company.vue')['default'];
     ViewsSystemSettingJurisdiction: typeof import('./src/views/systemSetting/jurisdiction.vue')['default'];
     ViewsSystemSettingRole: typeof import('./src/views/systemSetting/role.vue')['default'];

@@ -1,6 +1,12 @@
 import type { AppRouteRecordRaw, AppRouteModule } from '@/router/types';
-import { HOME_PAGE_NAME, LAYOUT, LOGIN_PAGE_NAME, PAGE_NOT_FOUND_NAME } from '@/router/constant';
-import PageNotFound from '@/views/sys/404.vue';
+import {
+  EXCEPTION_COMPONENT,
+  HOME_PAGE_NAME,
+  LAYOUT,
+  LOGIN_PAGE_NAME,
+  PAGE_NOT_FOUND_NAME,
+  REDIRECT_NAME,
+} from '@/router/constant';
 import { PageEnum } from '@/enums/pageEnum';
 
 const modules = import.meta.globEager('./modules/**/*.ts');
@@ -22,6 +28,28 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
+export const REDIRECT_ROUTE: AppRouteRecordRaw = {
+  path: '/redirect',
+  component: LAYOUT,
+  name: 'RedirectTo',
+  meta: {
+    title: REDIRECT_NAME,
+    hideBreadcrumb: true,
+    hideMenu: true,
+  },
+  children: [
+    {
+      path: '/redirect/:path(.*)',
+      name: REDIRECT_NAME,
+      component: () => import('@/views/sys/redirect.vue'),
+      meta: {
+        title: REDIRECT_NAME,
+        hideBreadcrumb: true,
+      },
+    },
+  ],
+};
+
 export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
   path: '/:path(.*)*',
   name: PAGE_NOT_FOUND_NAME,
@@ -35,7 +63,7 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
     {
       path: '/:path(.*)*',
       name: PAGE_NOT_FOUND_NAME,
-      component: PageNotFound,
+      component: EXCEPTION_COMPONENT,
       meta: {
         title: '404页面',
         hideBreadcrumb: true,
@@ -79,4 +107,4 @@ export const RootRoute: AppRouteRecordRaw = {
 export const asyncRoutes = [...routeModuleList];
 
 // Basic routing without permission
-export const basicRoutes = [LoginRoute, RootRoute, HomeRoute, PAGE_NOT_FOUND_ROUTE];
+export const basicRoutes = [LoginRoute, RootRoute, HomeRoute, PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE];

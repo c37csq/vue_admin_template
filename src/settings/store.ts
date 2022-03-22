@@ -7,6 +7,7 @@ export function createDefaultCurrentTab(): TabItem {
   const { getLocale } = useLocale();
   return {
     title: getLocale.value === LOCALE.EN_US ? 'Home' : '首页',
+    name: 'HomePage',
     url: PageEnum.BASE_REDIRECT_HOME,
     closable: false,
   };
