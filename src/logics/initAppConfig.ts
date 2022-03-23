@@ -6,6 +6,7 @@ import { deepMerge } from '@/utils/tool';
 import { PROJECT_CONFIG_KEY } from '@/enums/cacheEnum';
 import { Persistent } from '@/utils/cache/persistent';
 import { getCommonStoragePrefix, getStorageShortName } from '@/utils/env';
+import { useWatermark } from '@/hooks/web/useWatermark';
 
 export function initAppConfigStore() {
   const appStore = useAppStore();
@@ -14,6 +15,10 @@ export function initAppConfigStore() {
 
   // set config
   appStore.setProjectConfig(projectConfig);
+
+  const { setWatermark } = useWatermark();
+
+  setWatermark('c37 csq');
 
   setTimeout(() => {
     clearObsoleteStorage();

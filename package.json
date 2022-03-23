@@ -29,6 +29,7 @@
     "echarts": "^5.1.1",
     "element-plus": "^2.0.4",
     "lodash-es": "^4.17.21",
+    "resize-observer-polyfill": "^1.5.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-rc.10",
     "qs": "^6.10.3",
