@@ -40,14 +40,31 @@ export function translateTab(list: MenuItem[]) {
     title: t(`routes.${TabListEnum[item.parentId]}.${item.menuName}`),
     url: item.gourl,
   }));
+  // some end problem
+  map.push({
+    title: t('routes.financialSettlementPayment.payableDetail'),
+    url: '/home/payableDetail',
+  });
   tabList.forEach((item) => {
     if (item.url === PageEnum.BASE_REDIRECT_HOME) {
       item.title = t('common.home');
       return;
     }
-    const cur = map.find((val) => val.url === item.url || item.url.startsWith(val.url));
-    if (cur) {
-      item.title = cur.title;
+    console.log(item);
+    if (item.parentUrl) {
+      const curDetail = map.find(
+        (val) => item.url.startsWith(val.url) && val.url !== item.url && item.parentUrl !== val.url,
+      );
+      if (curDetail) {
+        const arr = item.url.split('/');
+        const length = arr.length;
+        item.title = `${curDetail!.title} ${arr[length - 1]}`;
+      }
+    } else {
+      const cur = map.find((val) => val.url === item.url);
+      if (cur) {
+        item.title = cur.title;
+      }
     }
   });
 }
@@ -105,6 +122,5 @@ export function generateRoutes(powerGroup, asyncRoutes) {
 
   // translate tab
   translateTab(children);
-  console.log(routes);
   return routes;
 }

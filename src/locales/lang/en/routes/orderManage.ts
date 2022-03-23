@@ -5,6 +5,6 @@ export default {
   costConfirmation: 'Expense Audit',
   productOrder: 'Product OrderList',
   orderAdd: 'Add Order',
-  orderDetail: 'Order Detail',
+  orderDetail: 'Order',
   orderSee: 'Order View',
 };

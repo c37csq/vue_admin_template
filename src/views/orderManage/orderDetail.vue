@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper :title="`订单 ${orderNumber}`">
     <div class="orderDetail">
       <el-tabs v-model="activeTab" type="card" @tab-click="handleTabClick">
         <el-tab-pane class="orderMaster" label="订单主档" name="orderMaster">
@@ -515,6 +515,7 @@
         secondServiceList,
         salesmanList,
         inspectionList,
+        orderNumber,
 
         handleTabClick,
         searchSecondServiceList,

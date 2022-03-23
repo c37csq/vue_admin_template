@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper title="订单列表">
     <div class="orderForm">
       <el-form ref="searchFormRef" :model="form" label-width="100px" inline>
         <el-form-item label="业务编号" prop="businessCodes">
@@ -962,7 +962,7 @@
       }
 
       function goOrderDetail(val: string) {
-        go('/home/orderDetail/' + val);
+        go('/home/order_detail/' + val);
       }
 
       async function orderStatusChange() {

@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper title="对方账单查询">
     <Button @click="handleClick('D03995950')" name="D03995950" />
     <Button @click="handleClick('JR202202')" name="JR202202" />
   </PageWrapper>

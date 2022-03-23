@@ -5,6 +5,6 @@ export default {
   problemPieces: '问题件列表',
   productOrder: '产品部订单列表',
   orderAdd: '订单新增',
-  orderDetail: '订单详情',
+  orderDetail: '订单',
   orderSee: '订单查看',
 };

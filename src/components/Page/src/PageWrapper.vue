@@ -2,7 +2,7 @@
   <el-scrollbar>
     <div class="pageWrapper">
       <div class="pageTitle">
-        <p class="page_title_text">{{ getCurrentTab.title }}：</p>
+        <p class="page_title_text">{{ title }}：</p>
       </div>
       <div class="pageContent">
         <slot></slot>
@@ -13,16 +13,14 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import { useTabs } from '@/hooks/web/useTab';
 
   export default defineComponent({
     name: 'PageWrapper',
-    setup() {
-      const { getCurrentTab } = useTabs();
-
-      return {
-        getCurrentTab,
-      };
+    props: {
+      title: {
+        type: String,
+        required: true,
+      },
     },
   });
 </script>

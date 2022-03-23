@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper title="用户列表">
     <div class="userForm">
       <el-form ref="searchFormRef" :model="form" label-width="100px" inline>
         <el-form-item :label="t('form.account')" prop="account">
