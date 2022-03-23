@@ -50,7 +50,6 @@ export function translateTab(list: MenuItem[]) {
       item.title = t('common.home');
       return;
     }
-    console.log(item);
     if (item.parentUrl) {
       const curDetail = map.find(
         (val) => item.url.startsWith(val.url) && val.url !== item.url && item.parentUrl !== val.url,
