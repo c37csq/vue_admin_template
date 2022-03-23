@@ -6,4 +6,5 @@ export default {
   verificationForReview: '付款审批',
   paymentManagement: '实付操作',
   paymentRecords: '付款查询',
+  payableDetail: '应付发票',
 };

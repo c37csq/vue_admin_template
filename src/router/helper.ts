@@ -86,7 +86,12 @@ export function generateRoutes(powerGroup, asyncRoutes) {
   });
   routes.forEach((item) => {
     const { name } = item;
-    item.children = obj[MenuListEnum[name]] ? obj[MenuListEnum[name]] : undefined;
+    const list = obj[MenuListEnum[name]] ? obj[MenuListEnum[name]] : undefined;
+    if (item.children) {
+      item.children = item.children.concat(list);
+    } else {
+      item.children = list;
+    }
   });
   // set language title
   routes.forEach((item) => {
@@ -100,5 +105,6 @@ export function generateRoutes(powerGroup, asyncRoutes) {
 
   // translate tab
   translateTab(children);
+  console.log(routes);
   return routes;
 }

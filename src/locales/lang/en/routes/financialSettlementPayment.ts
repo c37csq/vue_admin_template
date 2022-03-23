@@ -6,4 +6,5 @@ export default {
   verificationForReview: 'Payment Approval',
   paymentManagement: 'Paid In Operation',
   paymentRecords: 'Payment Query',
+  payableDetail: 'Payment Ticket',
 };
