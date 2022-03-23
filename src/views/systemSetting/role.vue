@@ -117,7 +117,7 @@
   import { useI18n } from '@/hooks/web/useI18n';
 
   export default defineComponent({
-    name: 'Role',
+    name: 'role',
     setup() {
       const form = reactive<RoleFormType>({
         roleName: '',

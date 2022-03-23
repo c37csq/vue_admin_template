@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'PayableListVerification',
+    name: 'payableListVerification',
   };
 </script>
 

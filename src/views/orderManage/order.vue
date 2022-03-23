@@ -625,7 +625,7 @@
   import { useI18n } from '@/hooks/web/useI18n';
 
   export default defineComponent({
-    name: 'Order',
+    name: 'order',
     components: {
       ArrowDown,
     },

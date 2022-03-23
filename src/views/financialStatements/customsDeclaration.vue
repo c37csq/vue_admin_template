@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'CustomsDeclaration',
+    name: 'customsDeclaration',
   };
 </script>
 

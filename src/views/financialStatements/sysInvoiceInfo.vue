@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'SysInvoiceInfo',
+    name: 'sysInvoiceInfo',
   };
 </script>
 

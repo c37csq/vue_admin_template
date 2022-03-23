@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'InvoiceType',
+    name: 'invoiceType',
   };
 </script>
 

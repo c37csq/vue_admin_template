@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'VerificationForReview',
+    name: 'verificationForReview',
   };
 </script>
 

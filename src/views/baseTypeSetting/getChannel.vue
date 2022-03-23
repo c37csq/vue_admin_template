@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'GetChannel',
+    name: 'getChannel',
   };
 </script>
 

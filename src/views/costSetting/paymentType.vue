@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'PaymentType',
+    name: 'paymentType',
   };
 </script>
 

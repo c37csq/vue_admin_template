@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'SailingConfirmation',
+    name: 'sailingConfirmation',
   };
 </script>
 

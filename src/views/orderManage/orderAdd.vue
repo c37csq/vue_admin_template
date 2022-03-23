@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'OrderAdd',
+    name: 'orderAdd',
   };
 </script>
 

@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'CooperationUnit',
+    name: 'cooperationUnit',
   };
 </script>
 

@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'VerificationRecords',
+    name: 'verificationRecords',
   };
 </script>
 

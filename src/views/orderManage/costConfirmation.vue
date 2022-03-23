@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'CostConfirmation',
+    name: 'costConfirmation',
   };
 </script>
 

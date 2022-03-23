@@ -274,7 +274,7 @@
   import { getUserInfo } from '@/utils/auth';
 
   export default defineComponent({
-    name: 'OrderDetail',
+    name: 'orderDetail',
     setup() {
       const activeTab = ref('orderMaster');
       const { currentRoute } = useRouter();

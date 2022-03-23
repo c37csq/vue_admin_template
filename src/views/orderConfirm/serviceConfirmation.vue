@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'ServiceConfirmation',
+    name: 'serviceConfirmation',
   };
 </script>
 

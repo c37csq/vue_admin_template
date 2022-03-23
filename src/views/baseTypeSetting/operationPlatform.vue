@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'OperationPlatform',
+    name: 'operationPlatform',
   };
 </script>
 

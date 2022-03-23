@@ -212,7 +212,7 @@
   import { useI18n } from '@/hooks/web/useI18n';
 
   export default defineComponent({
-    name: 'User',
+    name: 'user',
     setup() {
       const form = reactive<UserFormType>({
         userName: '',
