@@ -1,5 +1,6 @@
 <template>
-  <PageWrapper title="角色列表">
+  <PageWrapper
+    title='角色列表'>
     <div class="roleForm">
       <el-form ref="searchFormRef" :model="form" label-width="100px" inline>
         <el-form-item :label="t('form.roleCode')" prop="roleCode">

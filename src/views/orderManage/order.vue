@@ -1,5 +1,6 @@
 <template>
-  <PageWrapper title="订单列表">
+  <PageWrapper
+    title='订单列表'>
     <div class="orderForm">
       <el-form ref="searchFormRef" :model="form" label-width="100px" inline>
         <el-form-item label="业务编号" prop="businessCodes">

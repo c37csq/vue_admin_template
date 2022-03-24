@@ -43,7 +43,7 @@ export function translateTab(list: MenuItem[]) {
   // some end problem
   map.push({
     title: t('routes.financialSettlementPayment.payableDetail'),
-    url: '/home/payableDetail',
+    url: '/home/payableDetail'
   });
   tabList.forEach((item) => {
     if (item.url === PageEnum.BASE_REDIRECT_HOME) {
@@ -51,9 +51,7 @@ export function translateTab(list: MenuItem[]) {
       return;
     }
     if (item.parentUrl) {
-      const curDetail = map.find(
-        (val) => item.url.startsWith(val.url) && val.url !== item.url && item.parentUrl !== val.url,
-      );
+      const curDetail = map.find((val) => item.url.startsWith(val.url) && val.url !== item.url && item.parentUrl !== val.url);
       if (curDetail) {
         const arr = item.url.split('/');
         const length = arr.length;
