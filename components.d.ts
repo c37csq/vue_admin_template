@@ -7,6 +7,7 @@ declare module 'vue' {
     App: typeof import('./src/App.vue')['default'];
     ComponentsButtonSrcBasicButton: typeof import('./src/components/Button/src/BasicButton.vue')['default'];
     ComponentsContextMenuSrcContextMenu: typeof import('./src/components/ContextMenu/src/ContextMenu.vue')['default'];
+    ComponentsCountToSrcCountTo: typeof import('./src/components/CountTo/src/CountTo.vue')['default'];
     ComponentsDialogSrcDialog: typeof import('./src/components/Dialog/src/Dialog.vue')['default'];
     ComponentsIconSrcSvgIcon: typeof import('./src/components/Icon/src/SvgIcon.vue')['default'];
     ComponentsPageSrcPageWrapper: typeof import('./src/components/Page/src/PageWrapper.vue')['default'];

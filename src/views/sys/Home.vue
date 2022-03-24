@@ -17,7 +17,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.totalNumber }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.totalNumber" />
+                </p>
                 <p class="card_title">问题件总数</p>
                 <img class="image_logo" :src="totalImage" />
                 <div class="card_status">
@@ -39,7 +41,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.shipmentTimeout }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.shipmentTimeout" />
+                </p>
                 <p class="card_title">未开航总数</p>
                 <img class="image_logo" :src="notSailingOrder" />
                 <div class="card_status">
@@ -61,7 +65,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.deliveryTimeout }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.deliveryTimeout" />
+                </p>
                 <p class="card_title">送达超时订单</p>
                 <img class="image_logo" :src="lateOrder" />
                 <div class="card_status">
@@ -83,7 +89,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.checkTimeout }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.checkTimeout" />
+                </p>
                 <p class="card_title">查验超时订单</p>
                 <img class="image_logo" :src="reviewOrder" />
                 <div class="card_status">
@@ -105,7 +113,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.costEntryTimeout }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.costEntryTimeout" />
+                </p>
                 <p class="card_title">费用录入超时订单</p>
                 <img class="image_logo" :src="expenseEntryOrder" />
                 <div class="card_status">
@@ -127,7 +137,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.costTakeTimeout }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.costTakeTimeout" />
+                </p>
                 <p class="card_title">费用收取超时订单</p>
                 <img class="image_logo" :src="expenseCollectionOrder" />
                 <div class="card_status">
@@ -149,7 +161,9 @@
                 </div>
               </template>
               <template #default>
-                <p class="card_total">{{ orderCountInfo.productDataSize }}</p>
+                <p class="card_total">
+                  <CountTo :startVal="0" :endVal="orderCountInfo.productDataSize" />
+                </p>
                 <p class="card_title">产品部待确认订单</p>
                 <img class="image_logo" :src="confirmOrder" />
                 <div class="card_status">
@@ -212,9 +226,13 @@
   import { useAppUserStore } from '@/store/modules/user';
   import { RoleEnum } from '@/enums/pageEnum';
   import { useGo } from '@/hooks/web/usePage';
+  import { CountTo } from '@/components/CountTo';
 
   export default defineComponent({
     name: 'HomePage',
+    components: {
+      CountTo,
+    },
     setup() {
       const isShow = ref(false);
       const orderCountInfo = ref({}) as Ref<OrderCountInfo>;
