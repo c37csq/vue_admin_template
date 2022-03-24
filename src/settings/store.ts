@@ -9,6 +9,7 @@ export function createDefaultCurrentTab(): TabItem {
     title: getLocale.value === LOCALE.EN_US ? 'Home' : '首页',
     name: 'HomePage',
     url: PageEnum.BASE_REDIRECT_HOME,
+    ignoreKeepAlive: true,
     closable: false,
   };
 }

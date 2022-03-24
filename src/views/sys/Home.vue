@@ -6,73 +6,157 @@
     <div class="cards">
       <div :class="['cards_content', isShow ? 'servenItems' : '']">
         <div @click="goProblemList" class="cards_item first">
-          <el-card class="problemList_total" shadow="hover">
-            <p class="card_total">{{ orderCountInfo.totalNumber }}</p>
-            <p class="card_title">问题件总数</p>
-            <img class="image_logo" :src="totalImage" />
-            <div class="card_status">
-              <img class="h-12px" :src="totalStatus" />
-            </div>
+          <el-card shadow="hover">
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.totalNumber }}</p>
+                <p class="card_title">问题件总数</p>
+                <img class="image_logo" :src="totalImage" />
+                <div class="card_status">
+                  <img class="h-12px" :src="totalStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
         <div @click="goProblemList" class="cards_item" v-if="isShow">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.shipmentTimeout }}</p>
-            <p class="card_title">未开航总数</p>
-            <img class="image_logo" :src="notSailingOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="notSailingStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.shipmentTimeout }}</p>
+                <p class="card_title">未开航总数</p>
+                <img class="image_logo" :src="notSailingOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="notSailingStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
         <div @click="goProblemList" class="cards_item">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.deliveryTimeout }}</p>
-            <p class="card_title">送达超时订单</p>
-            <img class="image_logo" :src="lateOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="lateStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.deliveryTimeout }}</p>
+                <p class="card_title">送达超时订单</p>
+                <img class="image_logo" :src="lateOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="lateStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
         <div @click="goProblemList" class="cards_item">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.checkTimeout }}</p>
-            <p class="card_title">查验超时订单</p>
-            <img class="image_logo" :src="reviewOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="reviewStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.checkTimeout }}</p>
+                <p class="card_title">查验超时订单</p>
+                <img class="image_logo" :src="reviewOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="reviewStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
         <div @click="goProblemList" class="cards_item">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.costEntryTimeout }}</p>
-            <p class="card_title">费用录入超时订单</p>
-            <img class="image_logo" :src="expenseEntryOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="expenseEntryStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.costEntryTimeout }}</p>
+                <p class="card_title">费用录入超时订单</p>
+                <img class="image_logo" :src="expenseEntryOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="expenseEntryStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
         <div @click="goProblemList" class="cards_item">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.costTakeTimeout }}</p>
-            <p class="card_title">费用收取超时订单</p>
-            <img class="image_logo" :src="expenseCollectionOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="expenseCollectionStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.costTakeTimeout }}</p>
+                <p class="card_title">费用收取超时订单</p>
+                <img class="image_logo" :src="expenseCollectionOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="expenseCollectionStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
-        <div @click="goProblemList" class="cards_item last">
+        <div @click="goProblemList" class="cards_item">
           <el-card shadow="hover">
-            <p class="card_total">{{ orderCountInfo.productDataSize }}</p>
-            <p class="card_title">产品部待确认订单</p>
-            <img class="image_logo" :src="confirmOrder" />
-            <div class="card_status">
-              <img class="h-12px" :src="confirmStatus" />
-            </div>
+            <el-skeleton :loading="loading" animated>
+              <template #template>
+                <el-skeleton-item class="card_total" variant="p" />
+                <el-skeleton-item class="card_title" variant="p" />
+                <el-skeleton-item class="image_logo" variant="image" />
+                <div class="card_status">
+                  <el-skeleton-item class="skele_image" variant="image" />
+                </div>
+              </template>
+              <template #default>
+                <p class="card_total">{{ orderCountInfo.productDataSize }}</p>
+                <p class="card_title">产品部待确认订单</p>
+                <img class="image_logo" :src="confirmOrder" />
+                <div class="card_status">
+                  <img class="h-12px" :src="confirmStatus" />
+                </div>
+              </template>
+            </el-skeleton>
           </el-card>
         </div>
       </div>
@@ -92,13 +176,22 @@
         </el-select>
         <Button @click="getLineChartData" name="查询" type="primary" />
       </div>
-      <div ref="chartRef" style="height: 300px; width: 100%"></div>
+      <el-skeleton :loading="loading" animated>
+        <template #template>
+          <div style="height: 300px; width: 100%; margin-top: 30px">
+            <el-skeleton :rows="7" />
+          </div>
+        </template>
+        <template #default>
+          <div ref="chartRef" style="height: 300px; width: 100%"></div>
+        </template>
+      </el-skeleton>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, onActivated, onMounted, Ref, ref } from 'vue';
+  import { defineComponent, onMounted, Ref, ref } from 'vue';
   import { useECharts } from '@/hooks/web/useECharts';
   import totalImage from '@/assets/images/total.png';
   import totalStatus from '@/assets/images/white.png';
@@ -115,7 +208,6 @@
   import notSailingOrder from '@/assets/images/notSailingOrder.png';
   import notSailingStatus from '@/assets/images/yellow.png';
   import { getChartData, getOrderCount } from '@/API/sys/home';
-  import { useAppStore } from '@/store/modules/app';
   import { OrderCountInfo, OrderNumListItem } from '@/API/sys/model/homeModel';
   import { useAppUserStore } from '@/store/modules/user';
   import { RoleEnum } from '@/enums/pageEnum';
@@ -124,19 +216,20 @@
   export default defineComponent({
     name: 'HomePage',
     setup() {
-      const appStore = useAppStore();
       const isShow = ref(false);
       const orderCountInfo = ref({}) as Ref<OrderCountInfo>;
       const orderNumList = ref<OrderNumListItem[]>([]);
       const chartRef = ref<HTMLDivElement | null>(null);
       const userStore = useAppUserStore();
       const statisticsType = ref('1');
+      const loading = ref(true);
       const go = useGo();
       const options = ref([
         { name: '日', value: '1' },
         { name: '周', value: '2' },
       ]);
-      const { setOptions, echarts, resize } = useECharts(chartRef as Ref<HTMLDivElement>);
+      const { setOptions, echarts } = useECharts(chartRef as Ref<HTMLDivElement>);
+      let timeoutId = ref() as Ref<TimeoutHandle>;
 
       async function loadOrderCountInfo() {
         try {
@@ -247,10 +340,12 @@
       }
 
       function goProblemList() {
+        if (loading.value) return;
         go('/home/problemPieces');
       }
 
       async function getLineChartData() {
+        if (loading.value) return;
         await loadLineChartData({
           statisticsType: statisticsType.value,
         });
@@ -265,19 +360,23 @@
         if (userInfo.roleCode === RoleEnum.OVERSEAS_SERVICE) {
           isShow.value = true;
         }
-        appStore.setPageMountedLoading([getOrderCountInfo, getLineChartData]);
-      });
-
-      onActivated(() => {
-        if (resize) {
-          resize();
-        }
+        let setTimeoutPromise = new Promise((resolve) => {
+          timeoutId.value = setTimeout(() => {
+            resolve('成功');
+          }, 1200);
+        });
+        Promise.all([setTimeoutPromise, getOrderCountInfo, getLineChartData]).then((_) => {
+          clearTimeout(timeoutId.value);
+          loading.value = false;
+          setLineChartOption(orderNumList.value);
+        });
       });
 
       return {
         chartRef,
         orderCountInfo,
         isShow,
+        loading,
         totalImage,
         totalStatus,
         lateOrder,
@@ -361,19 +460,17 @@
             top: 16px;
           }
         }
-
-        .problemList_total {
-          background: linear-gradient(136deg, #35c3ff, #1890ff);
-
-          p {
-            color: #ffffff;
-          }
-        }
       }
 
       .cards_item.first {
         margin-right: 8px;
         margin-left: 0;
+        .el-card {
+          background: linear-gradient(136deg, rgb(53, 195, 255), rgb(24, 144, 255));
+          p {
+            color: #ffffff;
+          }
+        }
       }
 
       .cards_item.last {
@@ -413,6 +510,41 @@
 
       .el-button {
         margin-left: 15px;
+      }
+    }
+  }
+</style>
+<style lang="scss">
+  .el-skeleton {
+    .card_total {
+      font-size: 40px;
+      height: 40px;
+      width: 80%;
+      margin: 0 0 25px 0 !important;
+    }
+
+    .card_title {
+      font-size: 16px;
+      height: 16px;
+      width: 70%;
+      margin-top: 0 !important;
+    }
+
+    .image_logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+    }
+
+    .card_status {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+
+      .skele_image {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
       }
     }
   }

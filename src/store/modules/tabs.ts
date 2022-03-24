@@ -16,6 +16,7 @@ export interface TabItem {
   url: string;
   parentUrl?: string;
   closable?: boolean;
+  ignoreKeepAlive?: boolean;
 }
 
 export interface TabState {
@@ -54,6 +55,11 @@ export const useAppTabStore = defineStore({
     async updateCacheTab() {
       const cacheMap: Set<string> = new Set();
       for (const tab of this.tabList) {
+        // Ignore the cache
+        const needCache = !tab?.ignoreKeepAlive;
+        if (!needCache) {
+          continue;
+        }
         const name = tab.name as string;
         cacheMap.add(name);
       }

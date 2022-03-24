@@ -1,9 +1,8 @@
 <template>
-  <PageWrapper
-    :title="`应付发票 ${payInvoiceId}`"> 应付发票 </PageWrapper>
+  <PageWrapper :title="`应付发票 ${payInvoiceId}`"> 应付发票 </PageWrapper>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
   import { defineComponent, unref } from 'vue';
   import { useRouter } from 'vue-router';
 
@@ -15,9 +14,9 @@
       const payInvoiceId = params.id;
 
       return {
-        payInvoiceId
-      }
-    }
+        payInvoiceId,
+      };
+    },
   });
 </script>
 
