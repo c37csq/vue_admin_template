@@ -75,5 +75,6 @@ module.exports = defineConfig({
       },
     ],
     'vue/multi-word-component-names': 'off',
+    'vue/component-definition-name-casing': 'off',
   },
 });
