@@ -16,7 +16,6 @@ declare module 'vue' {
     ElAvatar: typeof import('element-plus/es')['ElAvatar'];
     ElButton: typeof import('element-plus/es')['ElButton'];
     ElCard: typeof import('element-plus/es')['ElCard'];
-    ElCol: typeof import('element-plus/es')['ElCol'];
     ElCollapse: typeof import('element-plus/es')['ElCollapse'];
     ElCollapseItem: typeof import('element-plus/es')['ElCollapseItem'];
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
@@ -39,7 +38,6 @@ declare module 'vue' {
     ElRadio: typeof import('element-plus/es')['ElRadio'];
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton'];
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup'];
-    ElRow: typeof import('element-plus/es')['ElRow'];
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar'];
     ElSelect: typeof import('element-plus/es')['ElSelect'];
     ElSkeleton: typeof import('element-plus/es')['ElSkeleton'];
@@ -49,8 +47,6 @@ declare module 'vue' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
     ElTable: typeof import('element-plus/es')['ElTable'];
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
-    ElTabPane: typeof import('element-plus/es')['ElTabPane'];
-    ElTabs: typeof import('element-plus/es')['ElTabs'];
     Layout: typeof import('./src/layout/index.vue')['default'];
     LayoutComponentsAppLogo: typeof import('./src/layout/components/AppLogo.vue')['default'];
     LayoutComponentsHeader: typeof import('./src/layout/components/Header.vue')['default'];

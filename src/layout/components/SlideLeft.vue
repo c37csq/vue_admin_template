@@ -77,7 +77,12 @@
       // close sub menu
       const closeSubMenu = () => {
         if (unref(menuRef)) {
-          unref(menuRef).close(unref(getSubActiveMenu));
+          unref(menuRef).close(unref(getSubActiveMenu), [unref(getSubActiveMenu)]);
+          appStore.setProjectConfig({
+            menuSetting: {
+              subActiveMenu: '',
+            },
+          });
         }
       };
 
