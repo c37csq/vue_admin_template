@@ -9,12 +9,7 @@
     </div>
     <div class="header-right">
       <span class="operate_book">
-        <a
-          class="operate_text"
-          href="https://sh1-fms-template.obs.cn-east-3.myhuaweicloud.com/fms.docx"
-          download
-          >{{ t('common.operateManual') }}</a
-        >
+        <div class="operate_text" @click="handleDownloadByUrl">{{ t('common.operateManual') }}</div>
       </span>
       <span class="company_wrapper">
         <span>{{ t('common.companyText') }}</span>
@@ -78,6 +73,7 @@
   import { useLocale } from '@/locales/useLocale';
   import { LocaleType } from '#/config';
   import { useI18n } from '@/hooks/web/useI18n';
+  import { downloadByUrl } from '@/utils/file/donwload';
 
   export default defineComponent({
     name: 'Header',
@@ -96,6 +92,13 @@
         if (command === 'logout') {
           userStore.logout(true);
         }
+      }
+
+      function handleDownloadByUrl() {
+        downloadByUrl({
+          url: 'https://sh1-fms-template.obs.cn-east-3.myhuaweicloud.com/fms.docx',
+          target: '_self',
+        });
       }
 
       function changeCompany(val: string) {
@@ -124,9 +127,10 @@
         userInfo,
         localeList,
         getLocale,
+        t,
 
         handleCommand,
-        t,
+        handleDownloadByUrl,
         changeCompany,
         handleChangeLanguage,
       };
@@ -172,11 +176,12 @@
         border: 1px solid #1890ff;
         margin-right: 25px;
 
-        a {
+        .operate_text {
           height: 100%;
           color: rgb(24, 144, 255);
           line-height: 44px;
           font-size: 22px;
+          cursor: pointer;
         }
       }
 
