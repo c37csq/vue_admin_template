@@ -39,7 +39,7 @@ export default {
     apiSelectNotFound: 'Wait for data loading to complete...',
   },
   icon: {
-    placeholder: 'Click the select icon',
+    placeholder: 'Click the common icon',
     search: 'Search icon',
     copy: 'Copy icon successfully!',
   },

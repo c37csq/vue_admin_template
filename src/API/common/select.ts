@@ -25,7 +25,7 @@ import {
 import { ResponseListType } from '@/API/common/model/responseModel';
 
 enum Api {
-  GetCompanyList = '/company/info/list/all',
+  GetCompanyList = '/getCompanyList',
   GetSectorList = '/sector/info',
   GetRoleList = '/role/info',
   GetBusinessList = '/system/business/code/list',

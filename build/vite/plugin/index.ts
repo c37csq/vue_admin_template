@@ -12,10 +12,12 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { configSvgIconsPlugin } from './svgSprite';
+import { configMockPlugin } from './mock';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {
     VITE_USE_IMAGEMIN,
+    VITE_USE_MOCK,
     VITE_LEGACY,
     VITE_BUILD_COMPRESS,
     VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
@@ -36,7 +38,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
           importStyle: 'sass',
         }),
       ],
-      directoryAsNamespace: true
+      directoryAsNamespace: true,
     }),
     // have to
     vueJsx(),
@@ -59,6 +61,9 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   // vite-plugin-svg-icons
   vitePlugins.push(configSvgIconsPlugin(isBuild));
 
+  // vite-plugin-mock
+  VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
+
   // The following plugins only work in the production environment
   if (isBuild) {
     //vite-plugin-imagemin
@@ -68,7 +73,6 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     vitePlugins.push(
       configCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
     );
-
   }
 
   return vitePlugins;

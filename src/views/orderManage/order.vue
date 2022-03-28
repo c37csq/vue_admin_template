@@ -1063,7 +1063,7 @@
       }
 
       onMounted(async () => {
-        // select list
+        // common list
         const getBusinessList = loadBusinessList();
         const getTransportClauseList = loadTransportClauseList();
         const getCabinetTypeList = loadCabinetTypeList();

@@ -4,7 +4,7 @@ export default {
   companyText: 'Company',
   pageSize: 'PageSize',
   fuzzyQuery: 'Fuzzy Query',
-  selectPlaceholder: 'Please select',
+  selectPlaceholder: 'Please common',
   personal: 'Personal Center',
   logout: 'Logout',
 };

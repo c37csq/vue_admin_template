@@ -98,9 +98,6 @@ export const useAppTabStore = defineStore({
     async addTab(item: TabItem) {
       const { url } = item;
       const tabList = this.getTabList;
-      if (this.currentTab.url === url) {
-        return;
-      }
       await this.setTab(item);
       if (tabList.find((v) => v.url === url)) {
         return;

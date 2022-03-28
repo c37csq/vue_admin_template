@@ -2,8 +2,8 @@ import { fmsHttp } from '@/utils/http';
 import { OrderCountInfo, OrderNumListItem } from '@/API/sys/model/homeModel';
 
 enum Api {
-  GetOrderCountInfo = '/statistics/problem/shipment/',
-  GetChartData = '/statistics/order/number',
+  GetOrderCountInfo = '/getCountInfo',
+  GetChartData = '/getChartData',
 }
 
 export function getOrderCount() {

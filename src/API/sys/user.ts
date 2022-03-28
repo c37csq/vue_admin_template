@@ -4,9 +4,9 @@ import { ErrorMessageMode } from '#/axios';
 import { UserInfo } from '#/store';
 
 enum Api {
-  Login = '/login/log',
-  GetUserPowerInfo = '/system/user/power',
-  GetUserInfo = '/login/byToken',
+  Login = '/login',
+  GetUserPowerInfo = '/getPowerInfo',
+  GetUserInfo = '/getUserInfo',
   UpdateToken = '/login/token',
 }
 
