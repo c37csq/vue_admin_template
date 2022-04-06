@@ -8,7 +8,7 @@ import { ResponseListType } from '@/API/common/model/responseModel';
 import { ErrorMessageMode } from '#/axios';
 
 enum Api {
-  List = '/role/info/list',
+  List = '/getRoleList',
   OperateRole = '/role/info',
 }
 

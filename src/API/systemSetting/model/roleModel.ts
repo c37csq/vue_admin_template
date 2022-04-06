@@ -4,7 +4,7 @@ import { PageParams } from '@/API/common/model/requestModel';
 export type RoleFormType = {
   roleCode: string;
   roleName: string;
-  useStatus: '0' | '1';
+  useStatus: '0' | '1' | 0 | 1;
 };
 
 // request role list
@@ -19,12 +19,12 @@ export type RoleListItem = {
   roleRemark: string;
   showPower: number;
   updateTime: string;
-  useStatus: '0' | '1';
+  useStatus: '0' | '1' | 0 | 1;
 };
 
 export type OperateRoleRequestParams = {
   roleName: string;
   roleRemark: string;
   roleCode: string;
-  useStatus?: '0' | '1';
+  useStatus?: '0' | '1' | 0 | 1;
 };

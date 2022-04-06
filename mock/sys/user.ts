@@ -1892,7 +1892,6 @@ export default [
     timeout: 200,
     method: 'post',
     response: ({ body }) => {
-      console.log(body);
       const { account, password } = body;
       const checkUser = createFakeUserList().find(
         (item) => item.account === account && password === item.password,

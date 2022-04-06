@@ -31,7 +31,7 @@ export function pagination<T = any>(pageNum: number, pageSize: number, array: T[
     list: ret,
     pageNum,
     pageSize,
-    total: ret.length,
+    total: array.length,
   };
 }
 
