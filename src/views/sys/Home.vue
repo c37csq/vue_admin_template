@@ -1,207 +1,209 @@
 <template>
-  <div class="home_page">
-    <div class="home_header">
-      <h3>欢迎进入发现头程系统</h3>
-    </div>
-    <div class="cards">
-      <div :class="['cards_content', isShow ? 'servenItems' : '']">
-        <div @click="goProblemList" class="cards_item first">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.totalNumber" />
-                </p>
-                <p class="card_title">问题件总数</p>
-                <img class="image_logo" :src="totalImage" />
-                <div class="card_status">
-                  <img class="h-12px" :src="totalStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item" v-if="isShow">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.shipmentTimeout" />
-                </p>
-                <p class="card_title">未开航总数</p>
-                <img class="image_logo" :src="notSailingOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="notSailingStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.deliveryTimeout" />
-                </p>
-                <p class="card_title">送达超时订单</p>
-                <img class="image_logo" :src="lateOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="lateStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.checkTimeout" />
-                </p>
-                <p class="card_title">查验超时订单</p>
-                <img class="image_logo" :src="reviewOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="reviewStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.costEntryTimeout" />
-                </p>
-                <p class="card_title">费用录入超时订单</p>
-                <img class="image_logo" :src="expenseEntryOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="expenseEntryStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.costTakeTimeout" />
-                </p>
-                <p class="card_title">费用收取超时订单</p>
-                <img class="image_logo" :src="expenseCollectionOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="expenseCollectionStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
-        <div @click="goProblemList" class="cards_item">
-          <el-card shadow="hover">
-            <el-skeleton :loading="loading" animated>
-              <template #template>
-                <el-skeleton-item class="card_total" variant="p" />
-                <el-skeleton-item class="card_title" variant="p" />
-                <el-skeleton-item class="image_logo" variant="image" />
-                <div class="card_status">
-                  <el-skeleton-item class="skele_image" variant="image" />
-                </div>
-              </template>
-              <template #default>
-                <p class="card_total">
-                  <CountTo :startVal="0" :endVal="orderCountInfo.productDataSize" />
-                </p>
-                <p class="card_title">产品部待确认订单</p>
-                <img class="image_logo" :src="confirmOrder" />
-                <div class="card_status">
-                  <img class="h-12px" :src="confirmStatus" />
-                </div>
-              </template>
-            </el-skeleton>
-          </el-card>
-        </div>
+  <el-scrollbar>
+    <div class="home_page">
+      <div class="home_header">
+        <h3>欢迎进入发现头程系统</h3>
       </div>
-    </div>
-    <div class="bar_chart">
-      <div class="title">
-        <h1>订单统计</h1>
-      </div>
-      <div class="select_time">
-        <el-select v-model="statisticsType">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.name"
-            :value="item.value"
-          />
-        </el-select>
-        <Button @click="getLineChartData" name="查询" type="primary" />
-      </div>
-      <el-skeleton :loading="loading" animated>
-        <template #template>
-          <div style="height: 300px; width: 100%; margin-top: 30px">
-            <el-skeleton :rows="7" />
+      <div class="cards">
+        <div :class="['cards_content', isShow ? 'servenItems' : '']">
+          <div @click="goProblemList" class="cards_item first">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.totalNumber" />
+                  </p>
+                  <p class="card_title">问题件总数</p>
+                  <img class="image_logo" :src="totalImage" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="totalStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
           </div>
-        </template>
-        <template #default>
-          <div ref="chartRef" style="height: 300px; width: 100%"></div>
-        </template>
-      </el-skeleton>
+          <div @click="goProblemList" class="cards_item" v-if="isShow">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.shipmentTimeout" />
+                  </p>
+                  <p class="card_title">未开航总数</p>
+                  <img class="image_logo" :src="notSailingOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="notSailingStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+          <div @click="goProblemList" class="cards_item">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.deliveryTimeout" />
+                  </p>
+                  <p class="card_title">送达超时订单</p>
+                  <img class="image_logo" :src="lateOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="lateStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+          <div @click="goProblemList" class="cards_item">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.checkTimeout" />
+                  </p>
+                  <p class="card_title">查验超时订单</p>
+                  <img class="image_logo" :src="reviewOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="reviewStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+          <div @click="goProblemList" class="cards_item">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.costEntryTimeout" />
+                  </p>
+                  <p class="card_title">费用录入超时订单</p>
+                  <img class="image_logo" :src="expenseEntryOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="expenseEntryStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+          <div @click="goProblemList" class="cards_item">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.costTakeTimeout" />
+                  </p>
+                  <p class="card_title">费用收取超时订单</p>
+                  <img class="image_logo" :src="expenseCollectionOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="expenseCollectionStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+          <div @click="goProblemList" class="cards_item">
+            <el-card shadow="hover">
+              <el-skeleton :loading="loading" animated>
+                <template #template>
+                  <el-skeleton-item class="card_total" variant="p" />
+                  <el-skeleton-item class="card_title" variant="p" />
+                  <el-skeleton-item class="image_logo" variant="image" />
+                  <div class="card_status">
+                    <el-skeleton-item class="skele_image" variant="image" />
+                  </div>
+                </template>
+                <template #default>
+                  <p class="card_total">
+                    <CountTo :startVal="0" :endVal="orderCountInfo.productDataSize" />
+                  </p>
+                  <p class="card_title">产品部待确认订单</p>
+                  <img class="image_logo" :src="confirmOrder" />
+                  <div class="card_status">
+                    <img class="h-12px" :src="confirmStatus" />
+                  </div>
+                </template>
+              </el-skeleton>
+            </el-card>
+          </div>
+        </div>
+      </div>
+      <div class="bar_chart">
+        <div class="title">
+          <h1>订单统计</h1>
+        </div>
+        <div class="select_time">
+          <el-select v-model="statisticsType">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.name"
+              :value="item.value"
+            />
+          </el-select>
+          <Button @click="getLineChartData" name="查询" type="primary" />
+        </div>
+        <el-skeleton :loading="loading" animated>
+          <template #template>
+            <div style="height: 300px; width: 100%; margin-top: 30px">
+              <el-skeleton :rows="7" />
+            </div>
+          </template>
+          <template #default>
+            <div ref="chartRef" style="height: 300px; width: 100%"></div>
+          </template>
+        </el-skeleton>
+      </div>
     </div>
-  </div>
+  </el-scrollbar>
 </template>
 
 <script lang="ts">
